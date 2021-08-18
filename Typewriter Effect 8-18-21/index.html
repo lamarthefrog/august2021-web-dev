@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect Test</title>
+</head>
+<body>
+    <p id="sample-text"></p>
+    <br>
+    <button type="button" id="start-btn" onclick="typeWriter()">Click to type</button>
+
+
+    <script>
+        var sampleText = document.getElementById("sample-text");
+        var i = 0;
+        var text = "Look at me, I am typing on my own. Isn't that crazy?";
+        var speed = 50; //speed it will type out in ms
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("sample-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+</body>
+</html>
